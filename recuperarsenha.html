@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esqueci Minha Senha</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    }
+
+    .container{
+      width:100%;
+      max-width:400px;
+      background:#fff;
+      padding:40px;
+      border-radius:16px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .container h1{
+      text-align:center;
+      color:#333;
+      margin-bottom:10px;
+    }
+
+    .container p{
+      text-align:center;
+      color:#666;
+      font-size:14px;
+      margin-bottom:30px;
+      line-height:1.5;
+    }
+
+    .input-group{
+      margin-bottom:20px;
+    }
+
+    .input-group label{
+      display:block;
+      margin-bottom:8px;
+      color:#444;
+      font-weight:bold;
+      font-size:14px;
+    }
+
+    .input-group input{
+      width:100%;
+      padding:14px;
+      border:1px solid #ccc;
+      border-radius:10px;
+      font-size:15px;
+      transition:0.3s;
+    }
+
+    .input-group input:focus{
+      border-color:#6d28d9;
+      outline:none;
+      box-shadow:0 0 0 3px rgba(109,40,217,0.2);
+    }
+
+    .btn{
+      width:100%;
+      padding:14px;
+      border:none;
+      border-radius:10px;
+      background:#6d28d9;
+      color:#fff;
+      font-size:16px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#5b21b6;
+    }
+
+    .back-login{
+      text-align:center;
+      margin-top:20px;
+    }
+
+    .back-login a{
+      color:#6d28d9;
+      text-decoration:none;
+      font-size:14px;
+      font-weight:bold;
+    }
+
+    .back-login a:hover{
+      text-decoration:underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Esqueceu sua senha?</h1>
+
+    <p>
+      Digite seu e-mail abaixo e enviaremos um link para redefinir sua senha.
+    </p>
+
+    <form>
+      <div class="input-group">
+        <label for="email">E-mail</label>
+        <input 
+          type="email" 
+          id="email" 
+          placeholder="Digite seu e-mail"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn">
+        Enviar link de recuperação
+      </button>
+    </form>
+
+    <div class="back-login">
+      <a href="#">Voltar para login</a>
+    </div>
+  </div>
+
+</body>
+</html>
