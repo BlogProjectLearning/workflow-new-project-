@@ -1,138 +1,343 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Esqueci Minha Senha</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<title>Recuperar Senha</title>
 
-    body{
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      background: linear-gradient(135deg, #4f46e5, #7c3aed);
-    }
+<style>
 
-    .container{
-      width:100%;
-      max-width:400px;
-      background:#fff;
-      padding:40px;
-      border-radius:16px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.2);
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
 
-    .container h1{
-      text-align:center;
-      color:#333;
-      margin-bottom:10px;
-    }
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#000000;
+}
 
-    .container p{
-      text-align:center;
-      color:#666;
-      font-size:14px;
-      margin-bottom:30px;
-      line-height:1.5;
-    }
+.container{
+    width:100%;
+    max-width:400px;
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 0.5rem 1rem rgba(0,0,0,0.3);
+}
 
-    .input-group{
-      margin-bottom:20px;
-    }
+.header{
+    background:#808080;
+    padding:20px;
+}
 
-    .input-group label{
-      display:block;
-      margin-bottom:8px;
-      color:#444;
-      font-weight:bold;
-      font-size:14px;
-    }
+.header h1{
+    text-align:center;
+    color:white;
+    font-size:28px;
+}
 
-    .input-group input{
-      width:100%;
-      padding:14px;
-      border:1px solid #ccc;
-      border-radius:10px;
-      font-size:15px;
-      transition:0.3s;
-    }
+.content{
+    padding:30px;
+}
 
-    .input-group input:focus{
-      border-color:#6d28d9;
-      outline:none;
-      box-shadow:0 0 0 3px rgba(109,40,217,0.2);
-    }
+.content p{
+    text-align:center;
+    color:#555;
+    margin-bottom:25px;
+    line-height:1.5;
+}
 
-    .btn{
-      width:100%;
-      padding:14px;
-      border:none;
-      border-radius:10px;
-      background:#6d28d9;
-      color:#fff;
-      font-size:16px;
-      cursor:pointer;
-      transition:0.3s;
-    }
+.input-group{
+    margin-bottom:20px;
+}
 
-    .btn:hover{
-      background:#5b21b6;
-    }
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+    color:#333;
+    font-weight:bold;
+}
 
-    .back-login{
-      text-align:center;
-      margin-top:20px;
-    }
+.input-group input{
+    width:100%;
+    padding:14px;
+    border:2px solid #ddd;
+    border-radius:6px;
+    font-size:15px;
+    transition:0.3s;
+}
 
-    .back-login a{
-      color:#6d28d9;
-      text-decoration:none;
-      font-size:14px;
-      font-weight:bold;
-    }
+.input-group input:focus{
+    outline:none;
+    border-color:#7e7883;
+    box-shadow:0 0 0 0.2rem rgba(126,120,131,0.25);
+}
 
-    .back-login a:hover{
-      text-decoration:underline;
-    }
-  </style>
+.captcha-box{
+    background:#f4f4f4;
+    border-radius:8px;
+    padding:15px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.captcha-box h3{
+    color:#333;
+    margin-bottom:10px;
+}
+
+.btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:6px;
+    background:linear-gradient(135deg,#0a0d1d 0%,#7e7883 100%);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:linear-gradient(135deg,#0f0c13 0%,#181a25 100%);
+}
+
+.back-login{
+    text-align:center;
+    margin-top:20px;
+}
+
+.back-login a{
+    color:#7e7883;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.back-login a:hover{
+    text-decoration:underline;
+}
+
+#mensagem{
+    text-align:center;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+</style>
 </head>
+
 <body>
 
-  <div class="container">
-    <h1>Esqueceu sua senha?</h1>
+<div class="container">
 
-    <p>
-      Digite seu e-mail abaixo e enviaremos um link para redefinir sua senha.
-    </p>
-
-    <form>
-      <div class="input-group">
-        <label for="email">E-mail</label>
-        <input 
-          type="email" 
-          id="email" 
-          placeholder="Digite seu e-mail"
-          required
-        />
-      </div>
-
-      <button type="submit" class="btn">
-        Enviar link de recuperação
-      </button>
-    </form>
-
-    <div class="back-login">
-      <a href="#">Voltar para login</a>
+    <div class="header">
+        <h1>Recuperar Senha</h1>
     </div>
-  </div>
+
+    <div class="content">
+
+        <p>
+            Digite seu e-mail e resolva a soma
+            para recuperar sua senha.
+        </p>
+
+        <form id="resetForm">
+
+            <div class="input-group">
+
+                <label>E-mail</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Digite seu e-mail"
+                    required
+                >
+
+            </div>
+
+
+            <!-- CAPTCHA -->
+            <div class="captcha-box">
+
+                <h3 id="captchaPergunta"></h3>
+
+                <input
+                    type="number"
+                    id="captchaResposta"
+                    placeholder="Digite o resultado"
+                    required
+                >
+
+            </div>
+
+
+            <button type="submit" class="btn">
+                Enviar link de recuperação
+            </button>
+
+        </form>
+
+        <div id="mensagem"></div>
+
+        <div class="back-login">
+
+            <a href="login.html">
+                Voltar para login
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script type="module">
+
+// FIREBASE
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+    getAuth,
+    sendPasswordResetEmail
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+
+// CONFIG FIREBASE
+const firebaseConfig = {
+
+    apiKey: "AIzaSyB8Vtm3yMziXsbVWmPrbQtiG6x2QESiDd8",
+
+    authDomain: "new-project-7ad9e.firebaseapp.com",
+
+    projectId: "new-project-7ad9e",
+
+    storageBucket: "new-project-7ad9e.firebasestorage.app",
+
+    messagingSenderId: "713177573867",
+
+    appId: "1:713177573867:web:9788adaa105382e0ba11ae"
+
+};
+
+
+// INICIAR FIREBASE
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+
+// CAPTCHA
+let numero1;
+let numero2;
+let resultado;
+
+
+function gerarCaptcha(){
+
+    numero1 = Math.floor(Math.random() * 10);
+
+    numero2 = Math.floor(Math.random() * 10);
+
+    resultado = numero1 + numero2;
+
+    document.getElementById("captchaPergunta")
+    .innerHTML =
+    `${numero1} + ${numero2} = ?`;
+
+}
+
+
+gerarCaptcha();
+
+
+// FORM
+const form = document.getElementById("resetForm");
+
+form.addEventListener("submit", async (e)=>{
+
+    e.preventDefault();
+
+    const email =
+    document.getElementById("email").value;
+
+    const resposta =
+    parseInt(
+        document.getElementById("captchaResposta").value
+    );
+
+    const mensagem =
+    document.getElementById("mensagem");
+
+
+    // VALIDAR CAPTCHA
+    if(resposta !== resultado){
+
+        mensagem.style.color = "red";
+
+        mensagem.innerHTML =
+        "Captcha incorreto";
+
+        gerarCaptcha();
+
+        return;
+
+    }
+
+
+    try{
+
+        await sendPasswordResetEmail(auth, email);
+
+        mensagem.style.color = "green";
+
+        mensagem.innerHTML =
+        "Email de recuperação enviado!";
+
+        form.reset();
+
+        gerarCaptcha();
+
+    }catch(error){
+
+        mensagem.style.color = "red";
+
+        if(error.code === "auth/user-not-found"){
+
+            mensagem.innerHTML =
+            "Usuário não encontrado";
+
+        }else if(error.code === "auth/invalid-email"){
+
+            mensagem.innerHTML =
+            "Email inválido";
+
+        }else{
+
+            mensagem.innerHTML =
+            "Erro ao enviar email";
+
+        }
+
+        console.log(error);
+
+    }
+
+});
+
+</script>
 
 </body>
 </html>
