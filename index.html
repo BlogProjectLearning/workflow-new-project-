@@ -18,7 +18,7 @@
         }
 
         header {
-            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+            background: linear-gradient(135deg, #000000 0%, #000000 100%);
             color: white;
             padding: 20px 0;
             position: sticky;
@@ -58,7 +58,7 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+            background: linear-gradient(135deg, #000000 0%, #bb0000 100%);
             color: white;
             text-align: center;
             padding: 100px 20px;
@@ -136,9 +136,34 @@
             text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
         }
 
+        .service-card.mobile {
+            background-image: url("https://images.unsplash.com/photo-1712903900754-955e0b39546b?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.55);
+            background-blend-mode: darken;
+            color: #ffffff;
+        }
+
+        .service-card.mobile h3,
+        .service-card.mobile p {
+            color: #ffffff;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+        }
+
+
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .service-card {
+            cursor: pointer;
+        }
+
+        .service-card:focus {
+            outline: 3px solid rgba(255,107,107,0.4);
+            outline-offset: 4px;
         }
 
         .service-icon {
@@ -155,6 +180,77 @@
         .service-card p {
             color: #666;
             line-height: 1.8;
+        }
+
+        .service-card .badge {
+            display: inline-block;
+            color: #000;
+            font-weight: 700;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        .service-card.consultoria,
+        .service-card.consulting {
+            background-image: url("https://blog.portalpos.com.br/wp-content/uploads/2023/07/one-on-one-1024x683.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.45);
+            background-blend-mode: darken;
+            color: #ffffff;
+        }
+        .service-card.marketing {
+            background-image: url("https://www.salesforce.com/br/blog/wp-content/uploads/sites/6/2023/06/por-que-investir-em-marketing-digital.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.45);
+            background-blend-mode: darken;
+            color: #ffffff;
+        }
+        .service-card.marketing h3,
+        .service-card.marketing p {
+            color: #ffffff;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+        }
+        .service-card.design {
+            background-image: url("https://ideiasesquecidas.com/wp-content/uploads/2016/05/papo_ideia.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.45);
+            background-blend-mode: darken;
+            color: #ffffff;
+        }
+        .service-card.design h3,
+        .service-card.design p {
+            color: #ffffff;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+        }
+        .service-card.security {
+            background-image: url("https://gruporedes.global/wp-content/uploads/2023/11/cyber-security-network-padlock-icon-internet-technology-networking-businessman-protecting-data-1024x472.webp");
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.55);
+            background-blend-mode: darken;
+            color: #ffffff;
+        }
+
+        .service-card.security h3,
+        .service-card.security p {
+            color: #ffffff;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .service-card.consultoria h3,
+        .service-card.consultoria p,
+        .service-card.consulting h3,
+        .service-card.consulting p {
+            color: #ffffff;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
         }
 
         footer {
@@ -206,39 +302,35 @@
     <section class="container" id="services">
         <h2 class="section-title">Nossos Serviços</h2>
         <div class="services-grid">
-            <div class="service-card development-web">
+            <div id="service-development-web" class="service-card development-web" data-service="desenvolvimento-web" aria-label="Serviço: Desenvolvimento Web">
                 <h3><strong>Desenvolvimento Web</strong></h3>
                 <p>Criamos sites modernos e responsivos com as melhores práticas de desenvolvimento.</p>
             </div>
 
-            <div class="service-card">
-                <div class="service-icon">📱</div>
+            <div id="service-mobile" class="service-card mobile" data-service="aplicativos-mobile" aria-label="Serviço: Aplicativos Mobile">
                 <h3><strong>Aplicativos Mobile</strong></h3>
                 <p>Desenvolvemos aplicativos iOS e Android com design intuitivo e funcionalidade robusta.</p>
             </div>
 
-            <div class="service-card">
+            <div id="service-design" class="service-card design" data-service="design-criativo" aria-label="Serviço: Design Criativo">
                 <div class="service-icon">🎨</div>
                 <h3><strong>Design Criativo</strong></h3>
                 <p>Equipe criativa preparada para transformar suas ideias em designs impressionantes.</p>
             </div>
 
-            <div class="service-card">
-                <div class="service-icon">📊</div>
+            <div id="service-consulting" class="service-card consulting" data-service="consultoria-digital" aria-label="Serviço: Consultoria Digital">
                 <h3><strong>Consultoria Digital</strong></h3>
                 <p>Estratégias personalizadas para impulsionar seu negócio no mundo digital.</p>
             </div>
 
-            <div class="service-card">
-                <div class="service-icon">🔒</div>
+            <div id="service-security" class="service-card security" data-service="seguranca-da-informacao" aria-label="Serviço: Segurança da Informação">
                 <h3><strong>Segurança da Informação</strong></h3>
                 <p>Proteção completa dos seus dados com as tecnologias mais avançadas de segurança.</p>
             </div>
 
-            <div class="service-card">
-                <div class="service-icon">🚀</div>
+            <div id="service-marketing" class="service-card marketing" data-service="marketing-digital" aria-label="Serviço: Marketing Digital">
                 <h3><strong>Marketing Digital</strong></h3>
-                <p>Campanhas eficazes que aumentam sua visibilidade e engajamento online.</p>
+                <p>Marketing digital estratégico para aumentar sua visibilidade, engajamento e conversões online.</p>
             </div>
         </div>
     </section>
